@@ -22,6 +22,10 @@ public class DessertShopOrder {
         return str;
     }
 
+    public void delivery() {
+
+    }
+
     public String getName() {
         return name;
     }
