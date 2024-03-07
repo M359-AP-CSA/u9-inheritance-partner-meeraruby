@@ -17,16 +17,16 @@ public class IceCream extends DessertShopOrder {
         str += "You have placed an order under the name + '" + getName() + "' for ice cream with "
                 + scoops + " of " + flavor;
         if(hasToppings()) {
-            str += " with toppings of " + toppings + ".";
+            str += " with toppings of " + toppings + ". ";
         }
         else {
-            str += "with no toppings.";
+            str += "with no toppings. ";
         }
         if(getIsToGo()) {
-            str += "You have selected for a to-go ice cream.";
+            str += "You have selected for a to-go ice cream. ";
         }
         else{
-            str += "You have selected to dine-in.";
+            str += "You have selected to dine-in. ";
         }
         return str;
     }

@@ -12,4 +12,16 @@ public class Sundae extends IceCream{
         this.hasCherries = hasCherries;
 
     }
+
+    public String toString() {
+        String str = "";
+        str += super.toString();
+        if (getIsToGo()) {
+            str += "You have selected a cone.";
+        }
+        else {
+            str += "You have selected a cup.";
+        }
+        return str;
+    }
 }

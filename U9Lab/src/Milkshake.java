@@ -15,12 +15,12 @@ public class Milkshake extends DessertShopOrder {
     public String toString() {
         String str = "";
         str += "You have placed an order under the name + '" + getName() + "' for a " + size + " milkshake with "
-                + milkType + " milk. You have chosen the following ingredients: " + ingredients;
+                + milkType + " milk. You have chosen the following ingredients: " + ingredients + ". ";
         if(getIsToGo()) {
-            str += " You have selected for a to-go ice cream.";
+            str += " You have selected for a to-go ice cream. ";
         }
         else{
-            str += " You have selected to dine-in.";
+            str += " You have selected to dine-in. ";
         }
         return str;
     }

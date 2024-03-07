@@ -14,10 +14,10 @@ public class DessertShopOrder {
         String str = "";
         str += "You have started an empty order with the name '" + name + "' that will be ";
         if (isToGo) {
-            str += "to go.";
+            str += "to go. ";
         }
         else {
-            str += "dine in.";
+            str += "dine in. ";
         }
         return str;
     }
