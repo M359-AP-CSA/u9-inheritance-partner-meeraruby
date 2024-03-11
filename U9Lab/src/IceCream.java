@@ -39,4 +39,8 @@ public class IceCream extends DessertShopOrder {
             return false;
         }
     }
+
+    public void makeDiscount(){
+        setDiscVal((Math.random()*20+5)/100.0);
+    }
 }

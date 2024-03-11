@@ -20,4 +20,8 @@ public class RegularIceCream extends IceCream{
         }
         return str;
     }
+
+    public void makeDiscount(){
+        setDiscVal((Math.random()*15+20)/100.0);
+    }
 }

@@ -24,4 +24,8 @@ public class Sundae extends IceCream{
         }
         return str;
     }
+
+    public void makeDiscount(){
+        setDiscVal((Math.random()*50+5)/100.0);
+    }
 }

@@ -5,7 +5,7 @@ public class Milkshake extends DessertShopOrder {
     private String size;
     private String milkType;
 
-    public Milkshake(String name, boolean isToGo, String ingredients, String size, String milkType){
+    public Milkshake(String name, boolean isToGo, double discVal, double itemPrice,  String ingredients, String size, String milkType){
         super(name, isToGo);
         this.ingredients = ingredients;
         this.size = size;
@@ -23,5 +23,9 @@ public class Milkshake extends DessertShopOrder {
             str += " You have selected to dine-in. ";
         }
         return str;
+    }
+
+    public void makeDiscount(){
+        setDiscVal((Math.random()*10+0)/100.0);
     }
 }
