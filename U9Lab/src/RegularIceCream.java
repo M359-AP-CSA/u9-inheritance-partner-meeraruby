@@ -3,12 +3,17 @@ package U9Lab.src;
 public class RegularIceCream extends IceCream{
     private boolean isCone;
 
-    public RegularIceCream(String name, boolean isToGo, String flavor, String toppings, int scoops, boolean isCone){
+    public RegularIceCream(String name, boolean isToGo, String flavor, String toppings,
+                           int scoops, boolean isCone){
         super(name, isToGo, flavor, toppings, scoops);
         this.isCone = isCone;
 
     }
 
+    /**
+     * This method is automatically called when an object of this class is called to be printed.
+     * @return String description listing order details w/ cone/cup specifications
+     */
     public String toString() {
         String str = "";
         str += super.toString();
@@ -21,7 +26,9 @@ public class RegularIceCream extends IceCream{
         return str;
     }
 
-    // @return: This method sets the discount value of a regular ice cream between 0.2 and 0.35
+    /**
+     * This method sets the discount value for a milkshake between 20% and 35%.
+     */
     public void makeDiscount(){
         setDiscVal((Math.random()*15+20)/100.0);
     }

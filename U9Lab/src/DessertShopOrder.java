@@ -17,6 +17,11 @@ public class DessertShopOrder {
         this.itemPrice = 0.0;
         this.itemList = new ArrayList<DessertShopOrder>();
     }
+
+    /**
+     * This method is called automatically when an object from this class is called to be printed.
+     * @return String describing that order is empty with details
+     */
     public String toString() {
         String str = "";
         str += "You have started an empty order with the name '" + name + "' that will be ";
@@ -30,20 +35,32 @@ public class DessertShopOrder {
         return str;
     }
 
-    //@return: This method returns a random decimal between 0 and 1 to be the value of the discount a customer gets
+    /**
+     * This method generates a random discount value from 0% to 100% and sets the generated value
+     * as the discount of the order item.
+     */
     public void makeDiscount(){
-        discVal = (Math.random()*100+0)/100.0;
+        discVal = (Math.random()*100)/100.0;
     }
 
-    // @ return: This method applies the discount value created in makeDiscount to the price of the item ordered
+    /**
+     * This method applies the discount value to itemPrice.
+     */
     public void applyDiscount() {
-        itemPrice = discVal*itemPrice;
+        itemPrice = (1-discVal)*itemPrice;
     }
 
     // @param: This method takes in the dessert shop order of the customer and adds the itemname to the
     // list of things that they ordered
+
+    /**
+     * This method adds the item parameter provided to the itemList of an order
+     * and prints a confirming statement.
+     * @param itemName new item to be added
+     */
     public void addItem(DessertShopOrder itemName) {
         itemList.add(itemName);
+        System.out.println("New item has been added to your order.");
     }
 
     public String getName() {
@@ -76,5 +93,13 @@ public class DessertShopOrder {
 
     public void setItemPrice(double itemPrice) {
         this.itemPrice = itemPrice;
+    }
+
+    public ArrayList<DessertShopOrder> getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(ArrayList<DessertShopOrder> itemList) {
+        this.itemList = itemList;
     }
 }

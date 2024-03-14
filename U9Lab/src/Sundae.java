@@ -10,13 +10,16 @@ public class Sundae extends IceCream{
         this.sauce = sauce;
         this.hasBananas = hasBananas;
         this.hasCherries = hasCherries;
-
     }
 
+    /**
+     * This method is automatically called when an object of this class is called to be printed.
+     * @return String description listing order details with cone/cup specifications
+     */
     public String toString() {
         String str = "";
         str += super.toString();
-        if (getIsToGo()) {
+        if (super.getIsToGo()) {
             str += "You have selected a cone.";
         }
         else {
@@ -25,8 +28,9 @@ public class Sundae extends IceCream{
         return str;
     }
 
-    // @return: this method sets the value of a sundae discount between 0.05 and 0.55
-    public void makeDiscount(){
+    /**
+     * This method sets the discount value for an ice cream item between 5% and 55%.
+     */    public void makeDiscount(){
         setDiscVal((Math.random()*50+5)/100.0);
     }
 }

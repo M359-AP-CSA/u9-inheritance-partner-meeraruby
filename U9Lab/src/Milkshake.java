@@ -5,18 +5,22 @@ public class Milkshake extends DessertShopOrder {
     private String size;
     private String milkType;
 
-    public Milkshake(String name, boolean isToGo, double discVal, double itemPrice,  String ingredients, String size, String milkType){
+    public Milkshake(String name, boolean isToGo,  String ingredients, String size, String milkType){
         super(name, isToGo);
         this.ingredients = ingredients;
         this.size = size;
         this.milkType = milkType;
     }
 
+    /**
+     * This method is automatically called when an object of this class is called to be printed.
+     * @return String description listing order details
+     */
     public String toString() {
         String str = "";
-        str += "You have placed an order under the name + '" + getName() + "' for a " + size + " milkshake with "
+        str += "You have placed an order under the name + '" + super.getName() + "' for a " + size + " milkshake with "
                 + milkType + " milk. You have chosen the following ingredients: " + ingredients + ". ";
-        if(getIsToGo()) {
+        if(super.getIsToGo()) {
             str += " You have selected for a to-go ice cream. ";
         }
         else{
@@ -25,8 +29,9 @@ public class Milkshake extends DessertShopOrder {
         return str;
     }
 
-
-    // @return: This method sets the discount value for a milkshake between 0.0 and 0.1
+    /**
+     * This method sets the discount value for a milkshake between 0% and 1%.
+     */
     public void makeDiscount(){
         setDiscVal((Math.random()*10+0)/100.0);
     }
