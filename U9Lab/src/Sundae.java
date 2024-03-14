@@ -25,6 +25,7 @@ public class Sundae extends IceCream{
         return str;
     }
 
+    // @return: this method sets the value of a sundae discount between 0.05 and 0.55
     public void makeDiscount(){
         setDiscVal((Math.random()*50+5)/100.0);
     }

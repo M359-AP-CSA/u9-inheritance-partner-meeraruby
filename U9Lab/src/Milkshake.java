@@ -25,6 +25,8 @@ public class Milkshake extends DessertShopOrder {
         return str;
     }
 
+
+    // @return: This method sets the discount value for a milkshake between 0.0 and 0.1
     public void makeDiscount(){
         setDiscVal((Math.random()*10+0)/100.0);
     }

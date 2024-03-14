@@ -31,6 +31,8 @@ public class IceCream extends DessertShopOrder {
         return str;
     }
 
+    //@return: This boolean returns whether the ice cream ordered has toppings or not
+
     public boolean hasToppings(){
         if (toppings != null) {
             return true;
@@ -39,7 +41,7 @@ public class IceCream extends DessertShopOrder {
             return false;
         }
     }
-
+    // @return: this method sets the discount value as a random number between 0.2 and 0.25
     public void makeDiscount(){
         setDiscVal((Math.random()*20+5)/100.0);
     }

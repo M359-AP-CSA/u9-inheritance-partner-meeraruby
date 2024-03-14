@@ -21,6 +21,7 @@ public class RegularIceCream extends IceCream{
         return str;
     }
 
+    // @return: This method sets the discount value of a regular ice cream between 0.2 and 0.35
     public void makeDiscount(){
         setDiscVal((Math.random()*15+20)/100.0);
     }
