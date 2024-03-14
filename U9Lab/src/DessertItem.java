@@ -47,6 +47,18 @@ public class DessertItem {
         itemPrice = (1-discVal)*itemPrice;
     }
 
+    public void calculatePrice() {
+        makeDiscount();
+        applyDiscount();
+        if (isToGo) {
+            itemPrice += 1.0;
+        }
+        else {
+            itemPrice += 3.0;
+        }
+        System.out.println("The calculated price of this ordered item is " + itemPrice +".");
+    }
+
     public String getName() {
         return name;
     }
