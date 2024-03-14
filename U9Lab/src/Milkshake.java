@@ -1,15 +1,18 @@
 package U9Lab.src;
 
-public class Milkshake extends DessertShopOrder {
+public class Milkshake extends DessertItem {
     private String ingredients;
     private String size;
     private String milkType;
+
+    private final double MILKSHAKEPRICE = 7.0;
 
     public Milkshake(String name, boolean isToGo,  String ingredients, String size, String milkType){
         super(name, isToGo);
         this.ingredients = ingredients;
         this.size = size;
         this.milkType = milkType;
+        super.setItemPrice(MILKSHAKEPRICE);
     }
 
     /**

@@ -4,12 +4,15 @@ public class Sundae extends IceCream{
     private String sauce;
     private boolean hasBananas;
     private boolean hasCherries;
+
+    private final double SUNDAEADDEDPRICE = 3.0;
     public Sundae(String name, boolean isToGo, String flavor, String toppings, int scoops, String sauce,
                   boolean hasBananas, boolean hasCherries){
         super(name, isToGo, flavor, toppings, scoops);
         this.sauce = sauce;
         this.hasBananas = hasBananas;
         this.hasCherries = hasCherries;
+        super.setItemPrice(super.getItemPrice()+SUNDAEADDEDPRICE);
     }
 
     /**

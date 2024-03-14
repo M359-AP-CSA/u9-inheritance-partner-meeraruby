@@ -1,15 +1,18 @@
 package U9Lab.src;
 
-public class IceCream extends DessertShopOrder {
+public class IceCream extends DessertItem {
     private String flavor;
     private String toppings;
     private int scoops;
+
+    private final double ICECREAMBASEEPRICE = 4.0;
 
     public IceCream(String name, boolean isToGo, String flavor, String toppings, int scoops){
         super(name, isToGo);
         this.flavor = flavor;
         this.toppings = toppings;
         this.scoops = scoops;
+        super.setItemPrice(ICECREAMBASEEPRICE);
     }
 
     /**

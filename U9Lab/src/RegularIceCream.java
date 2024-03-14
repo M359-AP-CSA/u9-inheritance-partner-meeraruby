@@ -3,10 +3,13 @@ package U9Lab.src;
 public class RegularIceCream extends IceCream{
     private boolean isCone;
 
+    private final double REGULARICECREAMADDEDPRICE = 3.0;
+
     public RegularIceCream(String name, boolean isToGo, String flavor, String toppings,
                            int scoops, boolean isCone){
         super(name, isToGo, flavor, toppings, scoops);
         this.isCone = isCone;
+        super.setItemPrice(super.getItemPrice()+REGULARICECREAMADDEDPRICE);
 
     }
 
