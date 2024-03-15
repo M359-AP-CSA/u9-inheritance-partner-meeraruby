@@ -9,6 +9,8 @@ public class IceCream extends DessertItem {
     private int numToppings;
 
     private final double ICECREAMBASEEPRICE = 4.0;
+    private final double TOPPPINGSCOST = 1.5;
+    private final double SCOOPCOST = 2.0;
 
     public IceCream(String name, boolean isToGo, String flavor, String topping1, String topping2, String topping3, int scoops){
         super(name, isToGo);
@@ -76,11 +78,10 @@ public class IceCream extends DessertItem {
     }
 
     public void calculatePrice() {
-        /*make a method to calculate price based on num scoops, and use constants defined above (need to be defined)
-        for the different toppings, if it's not recognized, charge none and say we don't have that topping
-
-        for numScoops, 
-        */
+        super.setItemPrice(getItemPrice()+numToppings*SCOOPCOST);
+        super.setItemPrice(getItemPrice()+howManyToppings()*TOPPPINGSCOST);
+        makeDiscount();
+        super.applyDiscount();
     }
 
     public String getFlavor() {
