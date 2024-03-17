@@ -1,3 +1,9 @@
+/*
+Ruby Arun, Meera Srivathsa
+Mrs. Denna, M359 AP CSA
+U9 Inheritance Lab
+March 2024
+ */
 package U9Lab.src;
 
 import java.util.ArrayList;
@@ -47,15 +53,19 @@ public class DessertItem {
         itemPrice = (1-discVal)*itemPrice;
     }
 
+    /**
+     * This method calculates the price of a general order based on if it is to-go or dine-in.
+     * It also generates and applies the discount using the above helper methods, creating the final price.
+     */
     public void calculatePrice() {
-        makeDiscount();
-        applyDiscount();
         if (isToGo) {
             itemPrice += 1.0;
         }
         else {
             itemPrice += 3.0;
         }
+        makeDiscount();
+        applyDiscount();
         System.out.println("The calculated price of this ordered item is " + itemPrice +".");
     }
 

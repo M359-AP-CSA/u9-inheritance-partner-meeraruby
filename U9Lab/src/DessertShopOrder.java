@@ -1,12 +1,20 @@
+/*
+Ruby Arun, Meera Srivathsa
+Mrs. Denna, M359 AP CSA
+U9 Inheritance Lab
+March 2024
+ */
 package U9Lab.src;
 
 import java.util.ArrayList;
 
 public class DessertShopOrder {
     private ArrayList<DessertItem> itemList;
+    private double totalPrice;
 
-    public DessertShopOrder(ArrayList<DessertItem> itemList) {
+    public DessertShopOrder() {
         this.itemList = new ArrayList<DessertItem>();
+        this.totalPrice = 0.0;
     }
 
     /**
@@ -16,7 +24,26 @@ public class DessertShopOrder {
      */
     public void addItem(DessertItem itemName) {
         itemList.add(itemName);
-        System.out.println("New item (" + itemName + ") been added to your order.");
+        System.out.println("New item (" + itemName.getClass().getName().substring(10) + ") been added to your order.");
+    }
+
+    /**
+     * This method iterates through every item in the ArrayList itemlist and prints each one by calling the toString.
+     */
+    public void printItems(){
+        for (DessertItem i: itemList) {
+            System.out.println(i + ", ");
+        }
+    }
+
+    /**
+     * This method calculates the total price of the items in the itemList.
+     */
+    public void calculateTotalPrice(){
+        for (int i =0; i < itemList.size(); i++) {
+            totalPrice += itemList.get(i).getItemPrice();
+        }
+        System.out.println("The calculated price of this ordered item is " + totalPrice +".");
     }
 
     public ArrayList<DessertItem> getItemList() {

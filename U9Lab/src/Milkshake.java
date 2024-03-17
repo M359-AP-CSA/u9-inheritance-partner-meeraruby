@@ -1,3 +1,9 @@
+/*
+Ruby Arun, Meera Srivathsa
+Mrs. Denna, M359 AP CSA
+U9 Inheritance Lab
+March 2024
+ */
 package U9Lab.src;
 
 public class Milkshake extends DessertItem {
@@ -8,6 +14,7 @@ public class Milkshake extends DessertItem {
 
     private final double MILKSHAKEPRICE = 7.0;
     private final double REGMILK = 2.00;
+    private final double EXTRASCOST = .5;
 
     private final double OATMILK = 2.89;
     private final double SOYMILK = 3.0;
@@ -15,7 +22,7 @@ public class Milkshake extends DessertItem {
     private final double MEDIUMADD = 0.75;
     private final double LARGEADD = 1.0;
 
-    public Milkshake(String name, boolean isToGo,  String extras, String size, String milkType){
+    public Milkshake(String name, boolean isToGo, String extras, String size, String milkType){
         super(name, isToGo);
         this.extras = extras;
         this.size = size;
@@ -48,6 +55,12 @@ public class Milkshake extends DessertItem {
         setDiscVal((Math.random()*10+0)/100.0);
     }
 
+    /**
+     * This method identifies the milk type based on the inputted string and returns the price of that milk ingredient.
+     * If the inputted milk type does not exist, then we cancel the order by return the negative of the base price to bring
+     * their order total to $00.00.
+     * @return the price of the specified milk type
+     */
     public double identifyMilkType(){
         if (milkType.equalsIgnoreCase("regular milk")){
             return REGMILK;
@@ -64,6 +77,11 @@ public class Milkshake extends DessertItem {
         }
     }
 
+    /**
+     * This method identifies the inputted size and returns the price for that chosen size. If the inputted size does
+     * not exist, then we cancel the order by return the negative of the base price to bring their order total to $00.00.
+     * @return the price of the selected size
+     */
     public double identifySize(){
         if (size.equalsIgnoreCase("small")){
             return SMALLADD;
@@ -81,10 +99,18 @@ public class Milkshake extends DessertItem {
         }
     }
 
+    /**
+     * This method calculates the price of an order of a milkshake based on the order size, specified milk type,
+     * and added extras. It also generates and applies the discount using the above helper methods, creating the final price.
+     */
     public void calculatePrice() {
         super.setItemPrice(getItemPrice()+identifySize());
         super.setItemPrice(getItemPrice()+identifyMilkType());
+        if (extras != null){
+            setItemPrice(getItemPrice()+EXTRASCOST);
+        }
         makeDiscount();
         super.applyDiscount();
+        System.out.println("The calculated price of this ordered item is " + getItemPrice() +".");
     }
 }
