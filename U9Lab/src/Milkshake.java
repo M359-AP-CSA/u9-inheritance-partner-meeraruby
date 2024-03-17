@@ -113,4 +113,60 @@ public class Milkshake extends DessertItem {
         super.applyDiscount();
         System.out.println("The calculated price of this ordered item is " + getItemPrice() +".");
     }
+
+    public String getExtras() {
+        return extras;
+    }
+
+    public void setExtras(String extras) {
+        this.extras = extras;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    public String getMilkType() {
+        return milkType;
+    }
+
+    public void setMilkType(String milkType) {
+        this.milkType = milkType;
+    }
+
+    public double getMILKSHAKEPRICE() {
+        return MILKSHAKEPRICE;
+    }
+
+    public double getREGMILK() {
+        return REGMILK;
+    }
+
+    public double getEXTRASCOST() {
+        return EXTRASCOST;
+    }
+
+    public double getOATMILK() {
+        return OATMILK;
+    }
+
+    public double getSOYMILK() {
+        return SOYMILK;
+    }
+
+    public double getSMALLADD() {
+        return SMALLADD;
+    }
+
+    public double getMEDIUMADD() {
+        return MEDIUMADD;
+    }
+
+    public double getLARGEADD() {
+        return LARGEADD;
+    }
 }

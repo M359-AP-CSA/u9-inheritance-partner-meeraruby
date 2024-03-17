@@ -53,4 +53,12 @@ public class DessertShopOrder {
     public void setItemList(ArrayList<DessertItem> itemList) {
         this.itemList = itemList;
     }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
 }
