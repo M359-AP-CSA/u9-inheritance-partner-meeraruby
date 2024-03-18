@@ -32,10 +32,10 @@ public class Sundae extends IceCream{
         String str = "";
         str += super.toString();
         if (super.getIsToGo()) {
-            str += "You have selected a cone.";
+            str += "You have selected a cone. ";
         }
         else {
-            str += "You have selected a cup.";
+            str += "You have selected a cup. ";
         }
         return str;
     }

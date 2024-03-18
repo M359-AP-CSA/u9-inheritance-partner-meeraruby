@@ -41,10 +41,10 @@ public class RegularIceCream extends IceCream{
             str += ": " + topping1 + ", " + topping2 + ", " + topping3;
         }
         if (isCone) {
-            str += "You have selected a cone.";
+            str += "You have selected a cone. ";
         }
         else {
-            str += "You have selected a cup.";
+            str += "You have selected a cup. ";
         }
         return str;
     }

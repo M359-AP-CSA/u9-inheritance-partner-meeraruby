@@ -44,7 +44,7 @@ public class Milkshake extends DessertItem {
         else{
             str += " You have selected to dine-in. ";
         }
-        str += "The price of this item is " + getItemPrice() + ".";
+        str += "The price of this item is " + getItemPrice() + ". ";
         return str;
     }
 

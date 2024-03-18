@@ -34,7 +34,7 @@ public class DessertItem {
         else {
             str += "dine in. ";
         }
-        str += "The price of this item is " + itemPrice + ".";
+        str += "The price of this item is " + itemPrice + ". ";
         return str;
     }
 

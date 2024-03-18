@@ -6,6 +6,7 @@ March 2024
  */
 package U9Lab.src;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class DessertShopOrder {
@@ -28,22 +29,25 @@ public class DessertShopOrder {
     }
 
     /**
-     * This method iterates through every item in the ArrayList itemlist and prints each one by calling the toString.
-     */
-    public void printItems(){
-        for (DessertItem i: itemList) {
-            System.out.println(i + ", ");
-        }
-    }
-
-    /**
      * This method calculates the total price of the items in the itemList.
      */
     public void calculateTotalPrice(){
         for (int i =0; i < itemList.size(); i++) {
             totalPrice += itemList.get(i).getItemPrice();
         }
-        System.out.println("The calculated price of this ordered item is " + totalPrice +".");
+        System.out.println("The calculated price of this ordered item is " + totalPrice +". ");
+    }
+
+    /**
+     * This method iterates through every item in the ArrayList itemlist and prints each one by calling the toString.
+     * @return
+     */
+    public String toString(){
+        String str = "";
+        for (int i = 0; i < itemList.size(); i++) {
+            str += itemList.get(i) + ", ";
+        }
+        return str;
     }
 
     public ArrayList<DessertItem> getItemList() {

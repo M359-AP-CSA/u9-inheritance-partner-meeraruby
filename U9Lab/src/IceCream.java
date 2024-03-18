@@ -29,14 +29,14 @@ public class IceCream extends DessertItem {
     public String toString() {
         String str = "";
         str += "You have placed an order under the name '" + super.getName() + "' for ice cream with "
-                + scoops + " scoops of " + flavor + ".";
+                + scoops + " scoops of " + flavor + ". ";
         if(super.getIsToGo()) {
             str += "You have selected for a to-go ice cream. ";
         }
         else{
             str += "You have selected to dine-in. ";
         }
-        str += "The price of this item is " + getItemPrice() + ".";
+        str += "The price of this item is " + getItemPrice() + ". ";
         return str;
     }
 
