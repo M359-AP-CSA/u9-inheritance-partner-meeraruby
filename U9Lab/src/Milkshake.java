@@ -7,7 +7,6 @@ March 2024
 package U9Lab.src;
 
 public class Milkshake extends DessertItem {
-    //figure out if ingredients need to be a list array (can be inputted by spaces into intenral array)
     private String extras;
     private String size;
     private String milkType;
@@ -49,7 +48,7 @@ public class Milkshake extends DessertItem {
     }
 
     /**
-     * This method sets the discount value for a milkshake between 0% and 1%.
+     * This method sets the discount value for a milkshake between 0% and 10%.
      */
     public void makeDiscount(){
         setDiscVal((Math.random()*10+0)/100.0);
