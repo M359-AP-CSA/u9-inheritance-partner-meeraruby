@@ -1,76 +1,64 @@
+/*
+Ruby Arun, Meera Srivathsa
+Mrs. Denna, M359 AP CSA
+U9 Inheritance Lab
+March 2024
+ */
 package U9Lab.src;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class DessertShopOrder {
-    private String name;
-    private boolean isToGo;
-    private double discVal;
-    private double itemPrice;
-    private ArrayList<DessertShopOrder> itemList;
+    private ArrayList<DessertItem> itemList;
+    private double totalPrice;
 
-    public DessertShopOrder(String name, boolean isToGo) {
-        this.name = name;
-        this.isToGo = isToGo;
-        this.discVal = 0.0;
-        this.itemPrice = 0.0;
-        this.itemList = new ArrayList<DessertShopOrder>();
+    public DessertShopOrder() {
+        this.itemList = new ArrayList<DessertItem>();
+        this.totalPrice = 0.0;
     }
 
-    public String toString() {
-        String str = "";
-        str += "You have started an empty order with the name '" + name + "' that will be ";
-        if (isToGo) {
-            str += "to go. ";
-        }
-        else {
-            str += "dine in. ";
-        }
-        str += "The price of this item is " + itemPrice + ".";
-        return str;
-    }
-
-    public void makeDiscount(){
-        discVal = (Math.random()*100+0)/100.0;
-    }
-    public void applyDiscount() {
-        itemPrice = discVal*itemPrice;
-    }
-
-    public void addItem(DessertShopOrder itemName) {
+    /**
+     * This method adds the item parameter provided to the itemList of an order
+     * and prints a confirming statement.
+     * @param itemName new item to be added
+     */
+    public void addItem(DessertItem itemName) {
         itemList.add(itemName);
+        System.out.println("New item (" + itemName.getClass().getName().substring(10) + ") been added to your order.");
     }
 
-    public String getName() {
-        return name;
+    /**
+     * This method iterates through every item in the ArrayList itemlist and prints each one by calling the toString.
+     */
+    public void printItems(){
+        for (DessertItem i: itemList) {
+            System.out.println(i + ", ");
+        }
     }
 
-    public void setName(String name) {
-        this.name = name;
+    /**
+     * This method calculates the total price of the items in the itemList.
+     */
+    public void calculateTotalPrice(){
+        for (int i =0; i < itemList.size(); i++) {
+            totalPrice += itemList.get(i).getItemPrice();
+        }
+        System.out.println("The calculated price of this ordered item is " + totalPrice +".");
     }
 
-    public boolean getIsToGo() {
-        return isToGo;
+    public ArrayList<DessertItem> getItemList() {
+        return itemList;
     }
 
-    public void setToGo(boolean toGo) {
-        isToGo = toGo;
+    public void setItemList(ArrayList<DessertItem> itemList) {
+        this.itemList = itemList;
     }
 
-    public double getDiscVal() {
-        return discVal;
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setDiscVal(double discVal) {
-        this.discVal = discVal;
-    }
-
-    public double getItemPrice() {
-        return itemPrice;
-    }
-
-    public void setItemPrice(double itemPrice) {
-        this.itemPrice = itemPrice;
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }
