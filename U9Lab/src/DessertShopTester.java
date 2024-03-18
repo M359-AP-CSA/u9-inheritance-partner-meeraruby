@@ -6,9 +6,7 @@ March 2024
  */
 package U9Lab.src;
 
-import java.util.ArrayList;
-
-public class DessertItemTester {
+public class DessertShopTester {
     public static void main(String[] args) {
         DessertItem generalItem = new DessertItem("ruby", true);
         IceCream chocoicecream = new IceCream("ruby", true, "chocolate", 2);
