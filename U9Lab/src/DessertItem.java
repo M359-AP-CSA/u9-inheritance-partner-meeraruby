@@ -27,7 +27,6 @@ public class DessertItem {
      */
     public String toString() {
         String str = "";
-        str += "You have started an empty order with the name '" + name + "' that will be ";
         if (isToGo) {
             str += "to go. ";
         }
