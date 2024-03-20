@@ -6,13 +6,9 @@ March 2024
  */
 package U9Lab.src;
 
-import java.util.ArrayList;
-
-public class DessertItemTester {
+public class DessertShopTester {
     public static void main(String[] args) {
-        DessertItem item1 = new DessertItem("ruby", true);
-        System.out.println(item1);
-
+        DessertItem generalItem = new DessertItem("ruby", true);
         IceCream chocoicecream = new IceCream("ruby", true, "chocolate", 2);
         chocoicecream.calculatePrice();
         Sundae yummysundae = new Sundae("meera", true,"strawberry",2,"chocolate",true,false);
@@ -24,5 +20,12 @@ public class DessertItemTester {
         rubysgrouporder.addItem(yummysundae);
         rubysgrouporder.addItem(vanillashake);
         rubysgrouporder.calculateTotalPrice();
+
+
+        System.out.println(generalItem);
+        System.out.println(chocoicecream);
+        System.out.println(yummysundae);
+        System.out.println(vanillashake);
+        System.out.println(rubysgrouporder);
     }
 }
